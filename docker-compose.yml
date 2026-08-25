@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./data/model_cache:/app/data/model_cache  # 模型缓存挂载，避免容器重建时重下模型
+      - ./.env:/app/.env
+    env_file:
+      - .env
+    environment:
+      # 指定 HuggingFace / sentence-transformers 缓存路径到挂载目录
+      - TRANSFORMERS_CACHE=/app/data/model_cache
+      - HF_HOME=/app/data/model_cache
+      - SENTENCE_TRANSFORMERS_HOME=/app/data/model_cache
+      - HF_HUB_CACHE=/app/data/model_cache
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app/frontend
+      - ./data/model_cache:/app/data/model_cache  # 前端也加载 Embedding（用于上传文档时索引）
+      - ./.env:/app/.env
+    env_file:
+      - .env
+    environment:
+      - TRANSFORMERS_CACHE=/app/data/model_cache
+      - HF_HOME=/app/data/model_cache
+      - SENTENCE_TRANSFORMERS_HOME=/app/data/model_cache
+      - HF_HUB_CACHE=/app/data/model_cache
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.so
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 环境变量与密钥
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 运行时日志
+*.log
+backend_*.log
+frontend_*.log
+
+# 测试缓存
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# 数据文件（索引和缓存）
+data/chroma_db/
+data/bm25_index/
+data/model_cache/
+data/sessions/
+app/data/sessions/
+
+# 评估结果
+evaluation/results/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Jupyter Notebook
+.ipynb_checkpoints/
