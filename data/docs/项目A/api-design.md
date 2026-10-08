@@ -433,7 +433,7 @@ GET /api/v1/courses?page=1&size=10&categoryId=10&sortBy=popular
         "orderNo": "OD20260728143022123456",
         "payType": "WECHAT",
         "payParams": {
-            "appId": "wx1234567890abcdef",
+            "appId": "<YOUR_WECHAT_APP_ID>",
             "timeStamp": "1722160422",
             "nonceStr": "a1b2c3d4e5f6",
             "package": "prepay_id=wx26172160422xxx",

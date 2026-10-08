@@ -413,8 +413,8 @@ public class OrderDelayConsumer implements RocketMQListener<String> {
 # application.yml
 payment:
   wechat:
-    app-id: wx1234567890abcdef
-    mch-id: 1234567890
+    app-id: <YOUR_WECHAT_APP_ID>
+    mch-id: <YOUR_WECHAT_MCH_ID>
     api-v3-key: your-api-v3-key-32-characters-long
     private-key-path: classpath:cert/wechat/apiclient_key.pem
     serial-number: YOUR_CERT_SERIAL_NUMBER
