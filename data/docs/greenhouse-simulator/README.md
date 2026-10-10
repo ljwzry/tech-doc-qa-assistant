@@ -173,7 +173,7 @@ python tools/simulator/greenhouse_simulator.py \
 | `DB_PASSWORD` | password | PostgreSQL 密码（首次初始化后不可改，需删 volume） |
 | `VALKEY_PASSWORD` | 自动生成 | Redis 密码 |
 | `TDENGINE_PASSWORD` | taosdata | TDengine 密码 |
-| `NEO4J_PASSWORD` | dongzao123 | Neo4j 密码（至少 8 位） |
+| `NEO4J_PASSWORD` | <NEO4J_PASSWORD> | Neo4j 密码（至少 8 位） |
 | `JWT_SECRET` | 自动生成 | JWT 签名密钥 (HS512, ≥64 字符，须与后端一致) |
 | `BACKEND_PORT` | 17001 | 后端端口 |
 | `GATEWAY_PORT` | 17003 | Gateway 端口 |
